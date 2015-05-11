@@ -6,7 +6,7 @@ echo  '\n'
 
 # install wallpaper cli
 sudo gem install desktop
-echo Install Homebrew, Postgres, wget and cask, node
+echo Install Homebrew, Postgres, wget and cask, node, elasticsearch
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 brew tap homebrew/science
 brew install wget
@@ -16,6 +16,7 @@ brew install ant
 brew install ffmpeg
 brew install eigen
 brew install opencv
+brew install elasticsearch
 npm install -g gitjk
 sudo npm install -g cordova
 npm install phonegap -g
@@ -28,17 +29,17 @@ brew install brew-cask
 # Core Functionality
 echo Install Core Apps
 #brew cask install --appdir="/Applications" alfred
-brew cask install --appdir="/Applications" dropbox
+#brew cask install --appdir="/Applications" dropbox
 #brew cask install --appdir="/Applications" little-snitch
 brew cask install --appdir="/Applications" adium
-brew cask install --appdir="/Applications" camtasia
+#brew cask install --appdir="/Applications" camtasia
 #brew cask install --appdir="~/Applications" transmit
 brew cask install --appdir="~/Applications" vlc
 #brew cask install --appdir="~/Applications" iterm2
 brew cask install --appdir="~/Applications" java
 
 ## get from App Store
-#brew cask install --appdir="/Applications" evernote
+brew cask install --appdir="/Applications" evernote
 #brew cask install --appdir="/Applications" wunderlist
 #brew cask install --appdir="/Applications" clamxav
 
@@ -60,8 +61,14 @@ brew cask install --appdir="/Applications" cakebrew
 #brew cask install --appdir="/Applications" easyfind
 #brew cask install --appdir="/Applications" macvim
 #brew cask install --appdir="/Applications" atom
-#brew cask install --appdir="/Applications" mamp
+brew cask install --appdir="/Applications" mamp
 brew cask install --appdir="/Applications" rstudio
+
+# Ruby stuff
+# keep all the docs from being added when rails is added
+echo "gem: --no-document" >> ~/.gemrc 
+curl -L https://get.rvm.io | bash -s stable --auto-dotfiles --autolibs=enable --rails
+ 
 
 
 # Google Slavery
